@@ -30,10 +30,27 @@ public class CheckoutTest {
 	}
 	
 	@Test
+	public void scanWithThreePommesSubtracts100() {
+		checkout.scan("Pommes");
+		checkout.scan("Pommes");
+		checkout.scan("Pommes");
+		
+		assertThat(checkout.getTotal(), is(200));
+	}
+	
+	@Test
 	public void scanWithMeleAdds100() {
 		checkout.scan("Mele");
 		
 		assertThat(checkout.getTotal(), is(100));
+	}
+	
+	@Test
+	public void scanWithTwoMeleSubtracts50() {
+		checkout.scan("Mele");
+		checkout.scan("Mele");
+		
+		assertThat(checkout.getTotal(), is(150));
 	}
 	
 	@Test

@@ -87,23 +87,19 @@ public class Checkout {
 
 	private void scanBananas() {
 		total += 150;
-		
 		bananas++;
 		
-		if (bananas == 2) {
+		if (bananas % 2 == 0) {
 			total -= 150;
-			bananas = 0;
 		}
 	}
 
 	private void scanCherries() {
 		total += 75;
-		
 		cherries++;
 		
-		if (cherries == 2) {
+		if (cherries % 2 == 0) {
 			total -= 20;
-			cherries = 0;
 		}
 	}
 

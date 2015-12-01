@@ -43,4 +43,12 @@ public class CheckoutTest {
 		
 		assertThat(checkout.getTotal(), is(120));
 	}
+	
+	@Test
+	public void scanWithTwoBananasSubtracts150() {
+		checkout.scan("Bananas");
+		checkout.scan("Bananas");
+		
+		assertThat(checkout.getTotal(), is(150));
+	}
 }

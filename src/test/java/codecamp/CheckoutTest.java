@@ -58,6 +58,13 @@ public class CheckoutTest {
 	}
 	
 	@Test
+	public void scanWithTwoBananasSubtracts150() {
+		checkout.scan("Bananas, Bananas");
+		
+		assertThat(checkout.getTotal(), is(150));
+	}
+	
+	@Test
 	public void scanWithCherriesAdds75() {
 		checkout.scan("Cherries");
 		
@@ -69,13 +76,6 @@ public class CheckoutTest {
 		checkout.scan("Cherries, Cherries");
 		
 		assertThat(checkout.getTotal(), is(130));
-	}
-	
-	@Test
-	public void scanWithTwoBananasSubtracts150() {
-		checkout.scan("Bananas, Bananas");
-		
-		assertThat(checkout.getTotal(), is(150));
 	}
 	
 	@Test

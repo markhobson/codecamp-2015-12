@@ -37,6 +37,13 @@ public class CheckoutTest {
 	}
 	
 	@Test
+	public void scanWithFourApplesSubtracts100() {
+		checkout.scan("Apples, Apples, Pommes, Mele");
+		
+		assertThat(checkout.getTotal(), is(300));
+	}
+	
+	@Test
 	public void scanWithMeleAdds100() {
 		checkout.scan("Mele");
 		

@@ -33,7 +33,7 @@ public class CheckoutCliTest {
 		
 		new CheckoutCli().scan(in, out);
 		
-		assertThat(toString(byteOut), is("730\n"));
+		assertThat(toString(byteOut), is("630\n"));
 	}
 
 	private static ByteArrayInputStream newInputStream(String string) {

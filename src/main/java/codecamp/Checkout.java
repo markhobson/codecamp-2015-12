@@ -4,6 +4,8 @@ public class Checkout {
 	
 	private int total;
 	
+	private int totalApples;
+	
 	private int pommes;
 	
 	private int mele;
@@ -14,6 +16,7 @@ public class Checkout {
 	
 	public Checkout() {
 		total = 0;
+		totalApples = 0;
 		pommes = 0;
 		mele = 0;
 		bananas = 0;
@@ -55,10 +58,14 @@ public class Checkout {
 
 	private void scanApples() {
 		total += 100;
+
+		addApple();
 	}
 
 	private void scanPommes() {
 		total += 100;
+
+		addApple();
 		
 		pommes++;
 		
@@ -70,6 +77,8 @@ public class Checkout {
 
 	private void scanMele() {
 		total += 100;
+
+		addApple();
 		
 		mele++;
 		
@@ -98,6 +107,15 @@ public class Checkout {
 		if (cherries == 2) {
 			total -= 20;
 			cherries = 0;
+		}
+	}
+
+	private void addApple() {
+		totalApples++;
+		
+		if (totalApples == 4) {
+			total -= 100;
+			totalApples = 0;
 		}
 	}
 

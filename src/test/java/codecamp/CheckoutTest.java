@@ -38,23 +38,9 @@ public class CheckoutTest {
 	
 	@Test
 	public void scanWithTwoCherriesSubtracts20() {
-		checkout.scan("Cherries, Cherries");
+		checkout.scan("Cherries");
+		checkout.scan("Cherries");
 		
 		assertThat(checkout.getTotal(), is(130));
-	}
-	
-	@Test
-	public void scanWithCsvAddsAll() {
-		checkout.scan("Apples, Bananas, Cherries");
-		
-		assertThat(checkout.getTotal(), is(325));
-	}
-	
-	@Test
-	public void scanResetsTotal() {
-		checkout.scan("Apples");
-		checkout.scan("Apples");
-		
-		assertThat(checkout.getTotal(), is(100));
 	}
 }

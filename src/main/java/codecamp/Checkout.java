@@ -22,47 +22,67 @@ public class Checkout {
 
 	public void scan(String line) {
 		if ("Apples".equals(line)) {
-			total += 100;
+			scanApples();
 		}
 		else if ("Pommes".equals(line)) {
-			total += 100;
-			
-			pommes++;
-			
-			if (pommes == 3) {
-				total -= 100;
-				pommes = 0;
-			}
+			scanPommes();
 		}
 		else if ("Mele".equals(line)) {
-			total += 100;
-			
-			mele++;
-			
-			if (mele == 2) {
-				total -= 50;
-				mele = 0;
-			}
+			scanMele();
 		}
 		else if ("Bananas".equals(line)) {
-			total += 150;
-			
-			bananas++;
-			
-			if (bananas == 2) {
-				total -= 150;
-				bananas = 0;
-			}
+			scanBananas();
 		}
 		else if ("Cherries".equals(line)) {
-			total += 75;
-			
-			cherries++;
-			
-			if (cherries == 2) {
-				total -= 20;
-				cherries = 0;
-			}
+			scanCherries();
+		}
+	}
+
+	private void scanApples() {
+		total += 100;
+	}
+
+	private void scanPommes() {
+		total += 100;
+		
+		pommes++;
+		
+		if (pommes == 3) {
+			total -= 100;
+			pommes = 0;
+		}
+	}
+
+	private void scanMele() {
+		total += 100;
+		
+		mele++;
+		
+		if (mele == 2) {
+			total -= 50;
+			mele = 0;
+		}
+	}
+
+	private void scanBananas() {
+		total += 150;
+		
+		bananas++;
+		
+		if (bananas == 2) {
+			total -= 150;
+			bananas = 0;
+		}
+	}
+
+	private void scanCherries() {
+		total += 75;
+		
+		cherries++;
+		
+		if (cherries == 2) {
+			total -= 20;
+			cherries = 0;
 		}
 	}
 

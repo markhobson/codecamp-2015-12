@@ -86,6 +86,13 @@ public class CheckoutTest {
 	}
 	
 	@Test
+	public void scanWithFiveFruitSubtracts200() {
+		checkout.scan("Apples, Bananas, Cherries, Pommes, Mele");
+		
+		assertThat(checkout.getTotal(), is(325));
+	}
+	
+	@Test
 	public void scanWithCsvAddsAll() {
 		checkout.scan("Apples, Bananas, Cherries");
 		

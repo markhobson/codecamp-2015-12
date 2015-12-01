@@ -89,6 +89,8 @@ public class Checkout {
 		total += 150;
 		bananas++;
 		
+		fruitAdded();
+		
 		if (bananas % 2 == 0) {
 			total -= 150;
 		}
@@ -97,6 +99,8 @@ public class Checkout {
 	private void scanCherries() {
 		total += 75;
 		cherries++;
+		
+		fruitAdded();
 		
 		if (cherries % 2 == 0) {
 			total -= 20;
@@ -107,10 +111,22 @@ public class Checkout {
 		if (getAppleCount() % 4 == 0) {
 			total -= 100;
 		}
+		
+		fruitAdded();
+	}
+
+	private void fruitAdded() {
+		if (getFruitCount() % 5 == 0) {
+			total -= 200;
+		}
 	}
 
 	private int getAppleCount() {
 		return apples + pommes + mele;
+	}
+	
+	private int getFruitCount() {
+		return getAppleCount() + bananas + cherries;
 	}
 
 	public int getTotal() {

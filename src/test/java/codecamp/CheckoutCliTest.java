@@ -29,11 +29,11 @@ public class CheckoutCliTest {
 	
 	@Test
 	public void scanOutputsTotal() throws IOException {
-		InputStream in = newInputStream("Mele, Pommes, Pommes, Apples, Pommes, Mele, Cherries, Cherries");
+		InputStream in = newInputStream("Mele, Pommes, Pommes, Apples, Pommes, Mele, Cherries, Cherries, Bananas");
 		
 		new CheckoutCli().scan(in, out);
 		
-		assertThat(toString(byteOut), is("580\n"));
+		assertThat(toString(byteOut), is("680\n"));
 	}
 
 	private static ByteArrayInputStream newInputStream(String string) {

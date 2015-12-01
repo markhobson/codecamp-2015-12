@@ -44,10 +44,10 @@ public class CheckoutTest {
 	}
 	
 	@Test
-	public void scanWithTwoMeleSubtracts50() {
+	public void scanWithTwoMeleSubtracts100() {
 		checkout.scan("Mele, Mele");
 		
-		assertThat(checkout.getTotal(), is(150));
+		assertThat(checkout.getTotal(), is(100));
 	}
 	
 	@Test

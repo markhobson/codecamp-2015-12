@@ -72,7 +72,7 @@ public class Checkout {
 		mele++;
 		
 		if (mele == 2) {
-			total -= 50;
+			total -= 100;
 			mele = 0;
 		}
 	}

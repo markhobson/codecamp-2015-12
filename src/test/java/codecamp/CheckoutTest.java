@@ -37,10 +37,10 @@ public class CheckoutTest {
 	}
 	
 	@Test
-	public void scanWithTwoCherriesSubtracts20() {
+	public void scanWithTwoCherriesSubtracts30() {
 		checkout.scan("Cherries");
 		checkout.scan("Cherries");
 		
-		assertThat(checkout.getTotal(), is(130));
+		assertThat(checkout.getTotal(), is(120));
 	}
 }

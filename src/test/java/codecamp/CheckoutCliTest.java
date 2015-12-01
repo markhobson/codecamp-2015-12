@@ -28,14 +28,23 @@ public class CheckoutCliTest {
 	}
 	
 	@Test
-	public void scanOutputsTotal() throws IOException {
-		InputStream in = newInputStream("Mele, Pommes, Pommes, Apples, Pommes, Mele, Cherries, Cherries, Bananas");
+	public void scanWithTwoLinesOutputsTotal() throws IOException {
+		InputStream in = newInputStream("Mele, Pommes, Pommes, Mele\nBananas\n");
 		
 		new CheckoutCli().scan(in, out);
 		
-		assertThat(toString(byteOut), is("430\n"));
+		assertThat(toString(byteOut), is("250\n200\n"));
 	}
 
+	@Test
+	public void scanWithOneLineOutputsTotal() throws IOException {
+		InputStream in = newInputStream("Mele, Pommes, Pommes, Apples, Mele\n");
+		
+		new CheckoutCli().scan(in, out);
+		
+		assertThat(toString(byteOut), is("150\n"));
+	}
+	
 	private static ByteArrayInputStream newInputStream(String string) {
 		return new ByteArrayInputStream(string.getBytes(UTF_8));
 	}

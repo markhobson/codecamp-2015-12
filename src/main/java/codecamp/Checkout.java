@@ -4,8 +4,11 @@ public class Checkout {
 	
 	private int total;
 	
+	private boolean cherries;
+	
 	public Checkout() {
 		total = 0;
+		cherries = false;
 	}
 
 	public void scan(String line) {
@@ -17,6 +20,14 @@ public class Checkout {
 		}
 		else if ("Cherries".equals(line)) {
 			total += 75;
+			
+			if (cherries) {
+				total -= 20;
+				cherries = false;
+			}
+			else {
+				cherries = true;
+			}
 		}
 	}
 

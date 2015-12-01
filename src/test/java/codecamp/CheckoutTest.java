@@ -35,4 +35,12 @@ public class CheckoutTest {
 		
 		assertThat(checkout.getTotal(), is(75));
 	}
+	
+	@Test
+	public void scanWithTwoCherriesSubtracts20() {
+		checkout.scan("Cherries");
+		checkout.scan("Cherries");
+		
+		assertThat(checkout.getTotal(), is(130));
+	}
 }

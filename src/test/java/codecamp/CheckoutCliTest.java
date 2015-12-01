@@ -15,7 +15,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class CheckoutTest {
+public class CheckoutCliTest {
 	
 	private ByteArrayOutputStream byteOut;
 	
@@ -31,7 +31,7 @@ public class CheckoutTest {
 	public void scanOutputsTotal() throws IOException {
 		InputStream in = newInputStream("Apples\nCherries\nCherries\n");
 		
-		new Checkout().scan(in, out);
+		new CheckoutCli().scan(in, out);
 		
 		assertThat(toString(byteOut), is("100\n175\n250\n"));
 	}

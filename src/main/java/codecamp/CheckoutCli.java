@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Checkout {
+public class CheckoutCli {
 
 	public void scan(InputStream in, PrintStream out) {
 		try (Scanner scanner = new Scanner(in)) {
@@ -26,6 +26,6 @@ public class Checkout {
 	}
 	
 	public static void main(String[] args) {
-		new Checkout().scan(System.in, System.out);
+		new CheckoutCli().scan(System.in, System.out);
 	}
 }

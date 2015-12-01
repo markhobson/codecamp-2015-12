@@ -33,7 +33,7 @@ public class Checkout {
 			total += 75;
 			
 			if (cherries) {
-				total -= 30;
+				total -= 20;
 				cherries = false;
 			}
 			else {

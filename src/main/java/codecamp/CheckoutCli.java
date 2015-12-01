@@ -7,20 +7,16 @@ import java.util.Scanner;
 public class CheckoutCli {
 
 	public void scan(InputStream in, PrintStream out) {
+		Checkout checkout = new Checkout();
+		
 		try (Scanner scanner = new Scanner(in)) {
-			int total = 0;
 			
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
+
+				checkout.scan(line);
 				
-				if ("Apples".equals(line)) {
-					total += 100;
-				}
-				else if ("Cherries".equals(line)) {
-					total += 75;
-				}
-				
-				out.println(total);
+				out.println(checkout.getTotal());
 			}
 		}
 	}

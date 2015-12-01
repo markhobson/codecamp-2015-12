@@ -12,6 +12,9 @@ public class Checkout {
 		if ("Apples".equals(line)) {
 			total += 100;
 		}
+		else if ("Bananas".equals(line)) {
+			total += 150;
+		}
 		else if ("Cherries".equals(line)) {
 			total += 75;
 		}

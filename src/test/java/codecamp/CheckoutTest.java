@@ -23,6 +23,13 @@ public class CheckoutTest {
 	}
 	
 	@Test
+	public void scanWithBananasAdds150() {
+		checkout.scan("Bananas");
+		
+		assertThat(checkout.getTotal(), is(150));
+	}
+	
+	@Test
 	public void scanWithCherriesAdds75() {
 		checkout.scan("Cherries");
 		

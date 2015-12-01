@@ -15,7 +15,7 @@ public class Checkout {
 	}
 
 	public void scan(String line) {
-		if ("Apples".equals(line)) {
+		if ("Apples".equals(line) || "Pommes".equals(line) || "Mele".equals(line)) {
 			total += 100;
 		}
 		else if ("Bananas".equals(line)) {

@@ -12,16 +12,20 @@ public class Checkout {
 	
 	private int cherries;
 	
-	public Checkout() {
+	public void scan(String line) {
 		total = 0;
 		pommes = 0;
 		mele = 0;
 		bananas = 0;
 		cherries = 0;
+		
+		for (String item : line.split(",")) {
+			scanItem(item.trim());
+		}
 	}
 
-	public void scan(String line) {
-		switch (line) {
+	private void scanItem(String item) {
+		switch (item) {
 			case "Apples":
 				scanApples();
 				break;

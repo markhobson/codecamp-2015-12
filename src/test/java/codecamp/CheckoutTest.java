@@ -31,9 +31,7 @@ public class CheckoutTest {
 	
 	@Test
 	public void scanWithThreePommesSubtracts100() {
-		checkout.scan("Pommes");
-		checkout.scan("Pommes");
-		checkout.scan("Pommes");
+		checkout.scan("Pommes, Pommes, Pommes");
 		
 		assertThat(checkout.getTotal(), is(200));
 	}
@@ -47,8 +45,7 @@ public class CheckoutTest {
 	
 	@Test
 	public void scanWithTwoMeleSubtracts50() {
-		checkout.scan("Mele");
-		checkout.scan("Mele");
+		checkout.scan("Mele, Mele");
 		
 		assertThat(checkout.getTotal(), is(150));
 	}
@@ -69,17 +66,30 @@ public class CheckoutTest {
 	
 	@Test
 	public void scanWithTwoCherriesSubtracts20() {
-		checkout.scan("Cherries");
-		checkout.scan("Cherries");
+		checkout.scan("Cherries, Cherries");
 		
 		assertThat(checkout.getTotal(), is(130));
 	}
 	
 	@Test
 	public void scanWithTwoBananasSubtracts150() {
-		checkout.scan("Bananas");
-		checkout.scan("Bananas");
+		checkout.scan("Bananas, Bananas");
 		
 		assertThat(checkout.getTotal(), is(150));
+	}
+	
+	@Test
+	public void scanWithCsvAddsAll() {
+		checkout.scan("Apples, Bananas, Cherries");
+		
+		assertThat(checkout.getTotal(), is(325));
+	}
+	
+	@Test
+	public void scanResetsTotal() {
+		checkout.scan("Apples");
+		checkout.scan("Apples");
+		
+		assertThat(checkout.getTotal(), is(100));
 	}
 }

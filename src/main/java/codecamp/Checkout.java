@@ -21,20 +21,29 @@ public class Checkout {
 	}
 
 	public void scan(String line) {
-		if ("Apples".equals(line)) {
-			scanApples();
-		}
-		else if ("Pommes".equals(line)) {
-			scanPommes();
-		}
-		else if ("Mele".equals(line)) {
-			scanMele();
-		}
-		else if ("Bananas".equals(line)) {
-			scanBananas();
-		}
-		else if ("Cherries".equals(line)) {
-			scanCherries();
+		switch (line) {
+			case "Apples":
+				scanApples();
+				break;
+				
+			case "Pommes":
+				scanPommes();
+				break;
+				
+			case "Mele":
+				scanMele();
+				break;
+				
+			case "Bananas":
+				scanBananas();
+				break;
+				
+			case "Cherries":
+				scanCherries();
+				break;
+				
+			default:
+				break;
 		}
 	}
 

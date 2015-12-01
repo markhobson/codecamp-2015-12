@@ -8,16 +8,16 @@ public class Checkout {
 	
 	private int mele;
 	
-	private boolean cherries;
+	private int cherries;
 	
-	private boolean bananas;
+	private int bananas;
 	
 	public Checkout() {
 		total = 0;
 		pommes = 0;
 		mele = 0;
-		cherries = false;
-		bananas = false;
+		cherries = 0;
+		bananas = 0;
 	}
 
 	public void scan(String line) {
@@ -47,23 +47,21 @@ public class Checkout {
 		else if ("Bananas".equals(line)) {
 			total += 150;
 			
-			if (bananas) {
+			bananas++;
+			
+			if (bananas == 2) {
 				total -= 150;
-				bananas = false;
-			}
-			else {
-				bananas = true;
+				bananas = 0;
 			}
 		}
 		else if ("Cherries".equals(line)) {
 			total += 75;
 			
-			if (cherries) {
+			cherries++;
+			
+			if (cherries == 2) {
 				total -= 20;
-				cherries = false;
-			}
-			else {
-				cherries = true;
+				cherries = 0;
 			}
 		}
 	}

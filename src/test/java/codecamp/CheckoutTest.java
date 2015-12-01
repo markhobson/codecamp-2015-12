@@ -86,10 +86,10 @@ public class CheckoutTest {
 	}
 	
 	@Test
-	public void scanResetsTotal() {
+	public void scanAccumulatesTotal() {
 		checkout.scan("Apples");
 		checkout.scan("Apples");
 		
-		assertThat(checkout.getTotal(), is(100));
+		assertThat(checkout.getTotal(), is(200));
 	}
 }

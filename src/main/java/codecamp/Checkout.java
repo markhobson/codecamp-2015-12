@@ -12,13 +12,15 @@ public class Checkout {
 	
 	private int cherries;
 	
-	public void scan(String line) {
+	public Checkout() {
 		total = 0;
 		pommes = 0;
 		mele = 0;
 		bananas = 0;
 		cherries = 0;
-		
+	}
+	
+	public void scan(String line) {
 		for (String item : line.split(",")) {
 			scanItem(item.trim());
 		}

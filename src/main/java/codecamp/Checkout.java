@@ -6,19 +6,23 @@ public class Checkout {
 	
 	private boolean cherries;
 	
-	public Checkout() {
+	public void scan(String line) {
 		total = 0;
 		cherries = false;
+		
+		for (String item : line.split(",")) {
+			scanItem(item.trim());
+		}
 	}
 
-	public void scan(String line) {
-		if ("Apples".equals(line)) {
+	private void scanItem(String item) {
+		if ("Apples".equals(item)) {
 			total += 100;
 		}
-		else if ("Bananas".equals(line)) {
+		else if ("Bananas".equals(item)) {
 			total += 150;
 		}
-		else if ("Cherries".equals(line)) {
+		else if ("Cherries".equals(item)) {
 			total += 75;
 			
 			if (cherries) {

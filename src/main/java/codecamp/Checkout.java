@@ -8,16 +8,16 @@ public class Checkout {
 	
 	private int mele;
 	
-	private int cherries;
-	
 	private int bananas;
+	
+	private int cherries;
 	
 	public Checkout() {
 		total = 0;
 		pommes = 0;
 		mele = 0;
-		cherries = 0;
 		bananas = 0;
+		cherries = 0;
 	}
 
 	public void scan(String line) {

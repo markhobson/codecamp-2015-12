@@ -1,7 +1,7 @@
 Code Camp December 2015
 =======================
 
-Black Pepper Code Camp December 2015.
+[Black Pepper](http://www.blackpepper.co.uk/) Code Camp December 2015.
 
 Running the CLI
 ---------------
